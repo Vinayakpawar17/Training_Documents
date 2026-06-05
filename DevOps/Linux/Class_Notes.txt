@@ -76,3 +76,218 @@ Pre-requisites:
 	5. Create EC2 Instances :::::
 	
 		-> Linux Ubuntu Machines: 24.04 LTS
+
+
+		
+######################
+Day 4 - 5th June 2026
+######################	
+
+		Overview of Linux
+		Linux Architecture
+		Linux Distributions
+		Basic Linux Commands
+		
+		- Package Management 
+		- File Management 
+		- User Management 
+		- Access Management 
+		- Remote Servers Management 
+		- Process Automation(Shell Scripting)		
+		
+		
+	Linux :
+
+		Overview of Linux :::
+		
+		Operating System acts as an interface between the user applications & the underlying Hardware.
+		
+
+	Fundamentals of Linux Operating System 
+	
+		- Windows 
+		- Mac 
+		- Linux 
+		
+		
+	Linux Operating System 
+		- Open-Source 
+		- Is Secured 
+		- Linux OS was created based on the Unix Operating System 
+		- Is an interface between the user applications and underlying Hardware.
+		- Linux OS is based on the Command User Interface
+		- Core of Linux OS is called kernel!
+			Components of Linux OS Architecture
+				- Networking 
+				- Storage 
+				- IPC - Inter Process Communication
+				- User Management 
+				- Security Management 
+				- Control Groups 
+				- Namespace 
+				- Process 
+				
+				
+		- Basic Linux Commands 
+		
+			Package Manager - apt/yum/dnf ==> can be executed as a root user.
+			
+		- Linux Distributions 
+				
+			Packages can be managed based on the Distributions 
+			
+				- Centos / RHEL 		===> 	yum package Manager 
+				- Debian / Ubuntu 		===>	apt/apt-get package Manager 
+				- Fedora				===>	dnf (Latest Version of Fedora)
+												yum (Previous Version of Fedora)
+																
+				- Access AWS Account :
+			
+				- Create EC2 Instance :
+					- Ubuntu 24.04 
+						- Security Group 
+						
+						
+						1 VM ==> 750 Hrs/Month 
+						
+						10 VMs ==> 75 Hrs/Month
+						
+						
+				- Connect to EC2 Instance ::::
+				
+					To connect to Linux instance we use 
+					
+						- SecureSHell(SSH) Connection
+						
+						- port 22 
+						
+					- Parameters required to enable SSH connection
+
+						- HostName 				# Public IP Address 
+						
+						- UserName				# Default Linux User Name 
+
+						- User Credentials: (Authentication Types)
+							- Password based Authentication
+							- Token based Authentication
+							- Key based Authentication
+								- Private Key 					# *.pem
+								- Public Key 
+								- authorized_keys
+							- Passwordless Authentication
+							
+				- Login to EC2 Instance :::
+				
+					- EC2 Instance Connect 				# Thru Web Browser
+					
+					- SSH Agent :						# Windows Users 
+					
+						- Putty 
+						- MobaXTerm						# Windows Users 
+							==> https://mobaxterm.mobatek.net/download-home-edition.html	
+							
+					- Terminal :						# Window/Mac/Linux
+
+							Open the Terminal.
+
+							Locate your private key file. The key used to launch this instance is AWS_MLOps_KeyPair.pem
+
+							Run this command, if necessary, to ensure your key is not publicly viewable.
+							chmod 400 "AWS_MLOps_KeyPair.pem"
+
+							Example:
+
+							ssh -i "AWS_MLOps_KeyPair.pem" ubuntu@ec2-13-126-190-242.ap-south-1.compute.amazonaws.com
+					
+					
+					
+		- Package Management :::
+
+			- Package Managers are used to install/Uninstall/Upgrade the Packages/software 
+		
+				- Centos / RHEL 		===> 	yum package Manager 
+				- Debian / Ubuntu 		===>	apt/apt-get package Manager 
+				- Fedora				===>	dnf (Latest Version of Fedora)
+												yum (Previous Version of Fedora)
+												
+			- Package Managers can be executed only by the root user on Linux
+			
+				- To work with Package Manager :
+					- Elevate the Access to Root Level 
+						- sudo -i			# This Command is used to elevate the access to root level
+		
+				- clear 
+				
+				- apt update 				# To Update the default packages 
+		
+			- To Install any tool/package :
+			
+				Install Pre-requisites	
+				Install Actual Tool
+				Post Installation Actions				
+		
+					Eg.: Tomcat :::: 
+					
+						Install Pre-requisites			===> jdk 
+						
+						Install Actual Tool				===> Install Tomcat (port : 8080)
+						
+						Post Installation Actions		===> Started Tomcat 
+		
+		
+			- Package :
+			
+					- Standalone Application Package
+					
+						- apt install git 
+					
+					- Service Package 					===> Are accessed using it's port Number.
+			
+						- apt install nginx
+						
+					
+					
+			How to Install/Manage Packages ? :::
+			
+			- Elevate the Access to Root Level
+				sudo -i 					# This Command is used to elevate the access to root level
+				
+			- apt update 					# Used update the default packages
+			
+			- apt install openjdk-17-jre -y	# Install Java Package 
+			
+			
+			- Web Application Servers! (Tomcat(8080)/Nginx/Httpd) - enabled with Host Port.
+				
+				- Update the Security Group - used to manage the inbound and outbound traffic
+			
+			
+			- apt install nginx -y			# port 80 
+			
+			- nginx -version				# http://13.201.22.0/
+			
+			- Linux Application Service(nginx/Jenkins) 		
+			
+				- Start / Stop / Enable / Status / restart 
+				
+				systemctl status nginx 
+				
+				systemctl start nginx
+				
+				systemctl stop nginx
+				
+				systemctl enable nginx		# Used to define the service as as start up service
+		
+				systemctl disable nginx		# Used to remove the service from the start-up task list
+				
+				systemctl restart nginx 
+				
+			- apt install git				# Install git 
+			
+			- apt remove git 				# Uninstall git 
+			
+			- apt upgrade git 				# Used to upgrade git
+			
+			which nginx						# Used to get the path of installation ?
+			
+			which git 
